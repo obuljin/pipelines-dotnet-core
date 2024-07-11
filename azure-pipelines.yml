@@ -15,9 +15,8 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: CopyPublishBuildArtifacts@1
+
+- task: PublishBuildArtifacts@1
   inputs:
-    CopyRoot: '$(Build.SourcesDirectory)'
-    Contents: '/$(BuildConfiguration)//?(.exe|.dll|*.pdb)'
-    ArtifactName: 'drop'
-    ArtifactType: 'Container'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
