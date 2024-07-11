@@ -20,4 +20,4 @@ steps:
     CopyRoot: '$(Build.SourcesDirectory)'
     Contents: '/$(BuildConfiguration)//?(.exe|.dll|*.pdb)'
     ArtifactName: 'drop'
-    ArtifactType: 'FilePath'
+    ArtifactType: 'Container'
